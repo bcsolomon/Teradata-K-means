@@ -6,7 +6,7 @@ drop table KMeans_Model;
 delete from clusters; 
 
 
--- Create base table to hold source data
+-- Create base table to hold source data. Data must be copied or loaded to this table. This SQL does not perform the data loading.
 CREATE TABLE features (
 	entity_id integer NOT NULL,
 	entity_name varchar(255) NOT NULL,
