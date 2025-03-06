@@ -25,8 +25,7 @@ CREATE TABLE features (
 --validate data was loaded correctly
 select * from features;
 
-
---Create table to store Original Clustering
+--Create table to store Original Clustering. Data must be loaded to this table.
 create table original_cluster (
 	entity_id integer not null,
 	cluster_id integer
@@ -47,11 +46,9 @@ SELECT hf.*
 FROM features hf
 JOIN original_cluster hu ON hf.entity_id = hu.entity_id
 WHERE hu.cluster_id IS NOT NULL
-AND hf.Exclude_Facility < 1;
-
---add in above to also exclude special facilities
+AND hf.Exclude_Facility < 1
 AND hf.special_facility < 1;
-
+--add in additional lines to filter as desired
 
 
 --Calculate Scaling parameters
