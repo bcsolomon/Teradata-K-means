@@ -118,7 +118,7 @@ Insert into clusters (entity_id, cluster_id, score_date)
 --Optional query to Join Original Clusters with Teradata
 SELECT DISTINCT 
     hc.cluster_id AS Teradata_Cluster,
-    original_cluster.cluster_id as Cluster,
+    original_cluster.cluster_id as Original_Cluster,
     hf.entity_id,      -- Include any other non-aggregated columns you want
     hf.entity_name,
     hf.count_admissions,
